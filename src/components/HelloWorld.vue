@@ -44,6 +44,10 @@
                 .on('message.group', (e, context) => {
                     console.log(context);
                     if (context.group_id === 774150811) {
+                        if (context.message === "/清屏") {
+                            this.spirits = {};
+                            return;
+                        }
                         this.nowId++;
                         this.$set(this.spirits, this.nowId, {
                             id: this.nowId,
